@@ -1,0 +1,26 @@
+{
+    "name": "cpt-deceiver/recursive-assignment",
+    "description": "Tree task resolver",
+    "license": [
+        "MIT"
+    ],
+    "authors": [
+        {
+            "name": "Michal Broniszewski",
+            "email": "prodev.michal.broniszewski@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.0",
+        "symfony/console": "^5.1",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "CptDeceiver\\": "src/"
+        }
+    }
+}
