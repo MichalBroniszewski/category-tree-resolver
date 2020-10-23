@@ -5,7 +5,7 @@
  * 22.10.2020
  */
 
-namespace CptDeceiver\Exception;
+namespace App\Exception;
 
 class TranslationNotExistsException extends \Exception
 {

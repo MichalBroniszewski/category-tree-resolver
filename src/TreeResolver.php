@@ -5,11 +5,11 @@
  * 22.10.2020
  */
 
-namespace CptDeceiver;
+namespace App;
 
 class TreeResolver
 {
-    public function assignName(array $tree, array $list, string $translationKey): array
+    public function assignName(array $tree, array &$list, string &$translationKey): array
     {
         $result = [];
         foreach ($tree as $node) {

@@ -5,16 +5,16 @@
  * 22.10.2020
  */
 
-namespace CptDeceiver\Command;
+namespace App\Command;
 
-use CptDeceiver\Exception\TranslationNotExistsException;
-use CptDeceiver\TreeResolver;
+use App\Exception\TranslationNotExistsException;
+use App\TreeResolver;
 use JsonException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
-use CptDeceiver\DataProvider\FileDataProvider;
+use App\DataProvider\FileDataProvider;
 
 class ResolveTreeTaskCommand extends Command
 {

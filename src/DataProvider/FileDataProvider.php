@@ -5,7 +5,7 @@
  * 22.10.2020
  */
 
-namespace CptDeceiver\DataProvider;
+namespace App\DataProvider;
 
 use JsonException;
 

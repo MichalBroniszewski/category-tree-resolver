@@ -1,5 +1,5 @@
 {
-    "name": "cpt-deceiver/recursive-assignment",
+    "name": "console-app/tree-task-resolver",
     "description": "Tree task resolver",
     "license": [
         "MIT"
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "CptDeceiver\\": "src/"
+            "App\\": "src/"
         }
     }
 }
