@@ -1,3 +1,3 @@
 #!/bin/bash
-C_USER=$(id -u) docker-compose up -d
+[ ! "$(docker ps -a | grep tree-app)" ] && C_USER=$(id -u) docker-compose up -d
 docker exec -ti tree-app php bin/console resolve-tree-task
