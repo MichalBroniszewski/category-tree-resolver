@@ -34,9 +34,6 @@ class ResolveTreeTaskCommand extends Command
         $this->treeResolver = new TreeResolver();
     }
 
-    /**
-     * @return void
-     */
     protected function configure(): void
     {
         parent::configure();
@@ -64,11 +61,13 @@ class ResolveTreeTaskCommand extends Command
     {
         $translationKey = $input->getOption('translation');
         $this->validateTranslation($translationKey);
+
         $list = $this->fileDataProvider->getList();
         $tree = $this->fileDataProvider->getTree();
         $result = $this->treeResolver->assignName($tree, $list, $translationKey);
         print_r($result);
-        return 0;
+
+        return Command::SUCCESS;
     }
 
     /**
