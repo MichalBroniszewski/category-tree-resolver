@@ -2,6 +2,7 @@ version: '3.5'
 
 services:
     php:
+        container_name: tree-app
         build:
             context: docker/php
         tty: true

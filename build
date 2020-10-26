@@ -1,0 +1,6 @@
+#!/bin/bash
+C_USER=$(id -u) docker-compose build --build-arg userId=$(id -u)
+
+#install dependencies
+C_USER=$(id -u) docker-compose up -d
+docker exec -ti login-app composer install --no-scripts

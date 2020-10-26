@@ -8,13 +8,13 @@
 namespace App\Command;
 
 use App\Exception\TranslationNotExistsException;
-use App\TreeResolver;
 use JsonException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use App\DataProvider\FileDataProvider;
+use App\TreeResolver;
 
 class ResolveTreeTaskCommand extends Command
 {
@@ -27,11 +27,11 @@ class ResolveTreeTaskCommand extends Command
 
     private TreeResolver $treeResolver;
 
-    public function __construct()
+    public function __construct(FileDataProvider $fileDataProvider, TreeResolver $treeResolver)
     {
         parent::__construct();
-        $this->fileDataProvider = new FileDataProvider();
-        $this->treeResolver = new TreeResolver();
+        $this->fileDataProvider = $fileDataProvider;
+        $this->treeResolver = $treeResolver;
     }
 
     protected function configure(): void
@@ -64,7 +64,11 @@ class ResolveTreeTaskCommand extends Command
 
         $list = $this->fileDataProvider->getList();
         $tree = $this->fileDataProvider->getTree();
-        $result = $this->treeResolver->assignName($tree, $list, $translationKey);
+        $result = $this->treeResolver->assignName(
+            $tree,
+            $list,
+            $translationKey
+        );
         print_r($result);
 
         return Command::SUCCESS;

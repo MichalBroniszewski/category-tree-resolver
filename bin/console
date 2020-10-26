@@ -6,9 +6,11 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
 use App\Command\ResolveTreeTaskCommand;
+use App\DataProvider\FileDataProvider;
+use App\TreeResolver;
 
 $app = new Application('tree task application');
 
-$app->add(new ResolveTreeTaskCommand());
+$app->add(new ResolveTreeTaskCommand(new FileDataProvider(), new TreeResolver()));
 
 $app->run();

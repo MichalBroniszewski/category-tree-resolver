@@ -9,7 +9,7 @@ namespace App;
 
 class TreeResolver
 {
-    public function assignName(array $tree, array &$list, string &$translationKey): array
+    public function assignName(array &$tree, array &$list, string $translationKey): array
     {
         $result = [];
         foreach ($tree as $node) {
@@ -23,7 +23,7 @@ class TreeResolver
         return $result;
     }
 
-    private function getCategoryName(int $id, array $list, string $translationKey): ?string
+    private function getCategoryName(int $id, array &$list, string $translationKey): ?string
     {
         foreach ($list as $category) {
             if ((int) $category['category_id'] === $id) {
