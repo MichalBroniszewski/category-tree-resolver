@@ -7,12 +7,12 @@
 ## Installation & requirements
 
 - Only php 7.4 is required
-- If you don't have it locally, you can use attached docker container just enter
-``` ./run``` command in project directory and then enter the container with ```docker exec -it container_name bash```
-- Install dependencies with composer: ```composer install``` and you are ready to go
+- If you don't have it locally, you can use attached docker container, just enter
+``` ./build``` command in project directory
+- Install dependencies with composer: ```composer install``` (if you didn't choose docker option) and you are ready to go
 
 ## Usage
+```php bin/console resolve-tree-task```
 
-```
- php bin/console resolve-tree-task
-```
+or in case of docker
+```./run```
